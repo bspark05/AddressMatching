@@ -120,32 +120,8 @@ def readAll():
 
 # input - 시군구 / 읍면동 / 본번 / 부번
 def findBuildingMGT(addr1, addr2, addr3, addr4):
-#     seoul11740 = [11740]
-#     seoul11710 = [11710]
-#     seoul11680 = [11680]
-#     seoul11650 = [11650]
-#     seoul11620 = [11620,0,1]
-#     seoul11590 = [11590]
-#     seoul11560 = [11560]
-#     seoul11545 = [545]
-#     seoul11530 = [530]
-#     seoul11500 = [500]
-#     seoul11470 = [470]
-#     seoul11440 = [440]
-#     seoul11410 = [410]
-#     seoul11380 = [380]
-#     seoul11350 = [350]
-#     seoul11320 = [320]
-#     seoul11305 = [305]
-#     seoul11290 = [290]
-#     seoul11260 = [260]
-#     seoul11230 = [230]
-#     seoul11215 = [215]
-#     seoul11200 = [200]
-#     seoul11170 = [170]
-#     seoul11140 = [140]
-#     seoul11110 = [110]
     bd_mgt_sn = -1
+    eqb_man_sn = -1
     seoulSIG = {
                 11110 : seoul11110,
                 11140 : seoul11140,
@@ -185,6 +161,6 @@ def findBuildingMGT(addr1, addr2, addr3, addr4):
             if mnnm == str(addr3):
                 if slno == str(addr4):
                     bd_mgt_sn = str(sigRow[0].value)
-    
-    return str(bd_mgt_sn)
+                    eqb_man_sn = str(sigRow[6].value)
+    return [str(bd_mgt_sn), str(eqb_man_sn)]
     

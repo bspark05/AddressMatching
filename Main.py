@@ -9,9 +9,9 @@ import Juso.Seoul as seoul
 
 if __name__ == '__main__': 
     
-    filename='Dictionary_temp'
+    filename='Dictionary'
     filepath = filename+'.xlsx'
-    sheetname = 'Sheet2'
+    sheetname = 'Sheet1'
     
     dicResult = excel.excelRead(filepath, sheetname)
     
@@ -23,16 +23,13 @@ if __name__ == '__main__':
         addr3 = int(dicRow[1].value)
         addr4 = int(dicRow[2].value)
         
-        bd_mgt_sn = seoul.findBuildingMGT(addr1, addr2, addr3, addr4)
+        matchingResult = seoul.findBuildingMGT(addr1, addr2, addr3, addr4)
         
-        dicRow.append(bd_mgt_sn)
+        dicRow.append(matchingResult[0])
+        dicRow.append(matchingResult[1])
         
         newDic.append(dicRow)
     
     newFilename = filename+'_result.xlsx'
     newSheetname = 'Sheet2'    
     excel.excelWriteNewFile(newFilename, newSheetname, newDic)
-    
-
-
-    
