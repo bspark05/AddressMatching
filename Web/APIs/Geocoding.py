@@ -15,9 +15,9 @@ def geocodeList(addressExcelList):
         
         searchingAddress+=rows[0].value
         searchingAddress+=' '
-        searchingAddress+=str(rows[1].value)
+        searchingAddress+=str(int(float(rows[1].value)))
         searchingAddress+='-'
-        searchingAddress+=str(rows[2].value)
+        searchingAddress+=str(int(float(rows[2].value)))
         #searchingAddress+=' '
         #searchingAddress+=str(rows[7].value)    
         
